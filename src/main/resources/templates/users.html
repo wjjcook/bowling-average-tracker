@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
     <meta charset="UTF-8">
-    <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>Manage Users</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 </head>
@@ -24,6 +22,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Enabled</th>
                     <th></th>
                 </tr>
             </thead>
@@ -32,6 +31,7 @@
                 <tr>
                     <td>[[${user.id}]]</td>
                     <td>[[${user.name}]]</td>
+                    <td>[[${user.enabled}]]</td>
                     <td>
                         <a class="h4 mr-3" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
                         <a class="h4" th:href="@{'/users/delete/' + ${user.id}}">Delete</a>
