@@ -1,2 +1,3 @@
 # bowling-average-tracker
-A simple application to track bowling averages.
+A simple Spring Boot application to track bowling averages.
+Utilizes the Thymeleaf HTML template and a MySQL database.
