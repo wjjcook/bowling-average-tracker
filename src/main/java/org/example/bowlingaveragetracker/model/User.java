@@ -13,6 +13,8 @@ public class User {
     @Column(nullable = false, unique = true, length = 45)
     private String name;
 
+    private boolean enabled;
+
     public User() {}
 
     public User(int id, String name){
@@ -34,6 +36,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override
