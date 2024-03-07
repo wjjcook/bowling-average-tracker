@@ -34,7 +34,7 @@ public class UserController {
     @PostMapping("/users/save")
     public String saveUser(User user, RedirectAttributes ra) {
         service.save(user);
-        ra.addFlashAttribute("message", "The user has been added successfully");
+        ra.addFlashAttribute("message", "The user has been saved successfully");
         return "redirect:/users";
     }
 
