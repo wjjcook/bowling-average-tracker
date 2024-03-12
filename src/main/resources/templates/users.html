@@ -7,9 +7,17 @@
 </head>
 <body>
 <div class="container-fluid text-center">
-    <div><h2>Manage Users</h2></div>
-    <div class="m-2">
-        <a class="h3" th:href="@{/users/new}">Add New User</a>
+
+    <div class="float-left">
+        <a class="h3" th:href="@{/}">Home</a>
+    </div>
+
+    <div>
+        <h2 class="text-center mr-5">Manage Users</h2>
+    </div>
+
+    <div>
+        <a class="h3 ml-4" th:href="@{/users/new}">Add New User</a>
     </div>
 
     <div th:if="${message}" class="alert alert-success text-center">
