@@ -9,6 +9,16 @@
 <div class="container-fluid text-center">
   <h1>Bowling Average Tracker</h1>
   <a class="h2" th:href="@{/users}">Manage Users</a>
+  <div>
+    <label for="userSelect">Select User:</label>
+    <select id="userSelect" name="userSelect">
+      <option th:each="user : ${listUsers}" th:value="${user.id}" th:text="${user.name}"></option>
+    </select>
+
+    <a class="btn btn-primary" th:href="@{'/bowling-scores/user/' + ${selectedUserId}}">View Scores</a>
+
+    <a class="btn btn-success" th:href="@{'/bowling-scores/add/' + ${selectedUserId}}">Add New Score</a>
+  </div>
 </div>
 </body>
 </html>
