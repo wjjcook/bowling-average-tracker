@@ -11,13 +11,13 @@ import java.util.List;
 @Service
 public class BowlingScoreService {
     @Autowired
-    private BowlingScoreRepo bowlingScoreRepo;
+    private BowlingScoreRepo repo;
 
     public List<BowlingScore> getScoresByUser(User user) {
-        return bowlingScoreRepo.findByUser(user);
+        return repo.findByUser(user);
     }
 
-    public void saveBowlingScore(BowlingScore bowlingScore) {
-        bowlingScoreRepo.save(bowlingScore);
+    public void saveBowlingScore(BowlingScore score) {
+        repo.save(score);
     }
 }
