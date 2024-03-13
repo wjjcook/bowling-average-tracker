@@ -13,11 +13,15 @@ public class BowlingScoreService {
     @Autowired
     private BowlingScoreRepo repo;
 
+    public List<BowlingScore> listAll() {
+        return (List<BowlingScore>) repo.findAll();
+    }
+
     public List<BowlingScore> getScoresByUser(User user) {
         return repo.findByUser(user);
     }
 
-    public void saveBowlingScore(BowlingScore score) {
+    public void save(BowlingScore score) {
         repo.save(score);
     }
 }

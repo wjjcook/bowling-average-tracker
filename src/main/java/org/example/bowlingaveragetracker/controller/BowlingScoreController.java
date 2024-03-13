@@ -27,21 +27,27 @@ public class BowlingScoreController {
 
     @PostMapping("/add")
     public String addBowlingScore(@ModelAttribute BowlingScore score) {
-        scoreService.saveBowlingScore(score);
+        scoreService.save(score);
         return "redirect:/bowling-scores";
     }
 
-    @GetMapping("/users/{userId}")
-    public String getScoresByUser(@PathVariable Integer userId, Model model, RedirectAttributes ra) {
-        try {
-            User user = userService.get(userId);
-            List<BowlingScore> scores = scoreService.getScoresByUser(user);
-            model.addAttribute("scores", scores);
-            return "bowling_scores";
-        } catch (UserNotFoundException e) {
-            ra.addFlashAttribute("message", e.getMessage());
-            return "redirect:/users";
-        }
+    @GetMapping("/bowling-scores")
+    public String getAllScores(Model model) {
 
+        List<BowlingScore> scores = scoreService.listAll();
+        model.addAttribute("scores", scores);
+        return "redirect:/index";
     }
+
+//    @GetMapping("")
+//    public String getScoresByUser(@PathVariable Integer userId, Model model, RedirectAttributes ra) {
+//        try {
+//            User user = userService.get(userId);
+//            List<BowlingScore> scores = scoreService.getScoresByUser(user);
+//            model.addAttribute("scores", scores);
+//        } catch (UserNotFoundException e) {
+//            ra.addFlashAttribute("message", e.getMessage());
+//        }
+//        return "index";
+//    }
 }

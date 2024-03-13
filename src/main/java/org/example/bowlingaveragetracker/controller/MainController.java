@@ -14,6 +14,7 @@ public class MainController {
 
     @Autowired
     private UserService userService;
+
     @GetMapping("")
     public String showHomePage(Model model){
         List<User> listUsers = userService.listAll();

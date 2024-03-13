@@ -15,9 +15,29 @@
       <option th:each="user : ${listUsers}" th:value="${user.id}" th:text="${user.name}"></option>
     </select>
 
-    <a class="btn btn-primary" th:href="@{'/bowling-scores/user/' + ${selectedUserId}}">View Scores</a>
+<!--    <a class="btn btn-primary" th:href="@{'/bowling-scores/user/' + ${user.id}}">View Scores</a>-->
 
-    <a class="btn btn-success" th:href="@{'/bowling-scores/add/' + ${selectedUserId}}">Add New Score</a>
+<!--    <a class="btn btn-success" th:href="@{'/bowling-scores/add/' + ${selectedUserId}}">Add New Score</a>-->
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Score</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="bScore : ${scores}">
+        <tr>
+          <td>[[${bScore.name}]]</td>
+          <td>[[${bScore.date}]]</td>
+          <td>[[${bScore.score}]]</td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
   </div>
 </div>
 </body>
